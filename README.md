@@ -8,7 +8,7 @@ It features:
  * responsive sizing of the grid based on screen size 
  * grid items are "selectable" and this state remains until app is reset
 
-You can view the demo in action via _GitHub pages_ [here](https://plundell.github.io/graphql_demo/build/) or you can tinker with the code yourself on [StackBlitz](https://stackblitz.com/github/plundell/graphql_demo)
+You can view the demo in action via _GitHub pages_ [here](https://plundell.github.io/graphql_demo/build/) or you can tinker with the code yourself on [StackBlitz](https://stackblitz.com/fork/github/plundell/graphql_demo/build/index.html)
 
 ## API
 For this demo we're using [this](https://github.com/trevorblades/countries) public API which provides information about countries. 
