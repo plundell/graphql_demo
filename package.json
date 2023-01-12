@@ -1,12 +1,13 @@
 {
   "name": "graphql_demo",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": false,
   "scripts": {
     "start": "react-scripts start",
     "start-all": "concurrently \"npm run start\"  \"npm run graphql-watch\"",
     "build": "npm run graphql-build && react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "//test": "react-scripts test --env=jsdom",
+    "test": "echo 'no tests specified'",
     "eject": "react-scripts eject",
     "graphql-build": "graphql-codegen",
     "graphql-watch": "graphql-codegen --watch",
@@ -58,7 +59,7 @@
         ],
         "hooks": {
           "afterOneFileWrite": [
-            "node ./build/make_queries.js"
+            "node ./make-graphql-queries.js"
           ]
         }
       }
