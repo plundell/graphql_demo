@@ -87,7 +87,7 @@ export class CountrySearch extends React.Component<Props,State> {
 
 	render(){
 		return (
-			<div className={this.constructor.name}>
+			<div id="countrySearch">
 				<CompletionInput 
 					debounce={settings.debounce} 
 					onInput={this.getCompletions.bind(this)}

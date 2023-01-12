@@ -168,7 +168,7 @@ export default class CountryResults extends React.Component<Props> {
 			this.debug("not started yet")
 		}
 		return (
-			<div className={this.constructor.name}>
+			<div className="countryResults">
 				<TileGrid tiles={tiles}/>
 			</div>
 		)

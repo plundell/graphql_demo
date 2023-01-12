@@ -1,8 +1,8 @@
-.CompletionInput{
+.completionInput{
     position: relative;
     margin: auto;
 }
-.CompletionInput>input{
+.completionInput>input{
     width: 100%;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -20,7 +20,7 @@
     opacity: 90%;
     display: none;
 }
-.CompletionInput>input:focus ~.completionList{
+.completionInput>input:focus ~.completionList{
     display:block !important;
 }
 .completionList .completion{

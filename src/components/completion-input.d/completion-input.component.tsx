@@ -155,7 +155,7 @@ export class CompletionInput<T extends CompletionItem> extends React.Component<P
 	}
 	render(){	
 		return (
-			<div className={this.constructor.name}>
+			<div className="completionInput">
 				<input 
 					ref={elem=>{if(elem)this.inputElem=elem;}}
 					type="text" 
