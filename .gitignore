@@ -1,3 +1,4 @@
 *.sublime-project
+*.sublime-workspace
 notes.md
 node_modules/
