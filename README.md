@@ -3,10 +3,10 @@
 This repo contains a simple [React](https://reactjs.org/docs/create-a-new-react-app.html) web app which demonstrates how to use the [graphql-request](https://github.com/prisma-labs/graphql-request) client library to consume a [GraphQL](https://graphql.org/) API.
 
 It features:
- * a text search input which suggests completions as the user types
+ * a text search which fetches results as user types
  * a grid output of search results
  * responsive sizing of the grid based on screen size 
- * clickable items in the grid which show additional data
+ * grid items are "selectable" and this state remains until app is reset
 
 You can view the demo in action via [GitHub pages](http://plundell.github.io/graphql_demo) or you can tinker with the code yourself on [StackBlitz](https://stackblitz.com/github/plundell/graphql_demo)
 
@@ -72,4 +72,4 @@ One major benifit of GraphQL are the customizable queries and predictable respon
 
 
 ## Development
-Use Reacts builtin dev server to develop the app: `npm run start`
+Use Reacts builtin dev server to develop the app by running: `npm start`
