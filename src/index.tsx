@@ -4,8 +4,6 @@ import CountrySearch from './components/country-search.d/country-search.componen
 import "./style.css";
 
 
-
-
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement); 
 
 root.render(
@@ -13,14 +11,3 @@ root.render(
 		<CountrySearch />
 	</React.StrictMode>
 );
-
-
-
-// async function resultsHandler(promise: Promise){
-//   try{
-//     const data=await promise;
-//     console.log(data);
-//   }catch(e){
-//     console.error(e)
-//   }
-// }
