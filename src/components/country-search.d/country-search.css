@@ -1,0 +1,62 @@
+#country-search{
+	display: flex;
+  	align-items: center;
+  	justify-content: center;
+  	flex-direction: column;
+}
+
+
+
+
+.loading {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: black;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+
+.tile.country{
+	background: orange;
+}
+
+.tile.continent{
+	background: #7878f5;
+}
+
+.tile.language{
+	background: pink;
+}
+
+
+.tile.marked{
+	opacity: 50%;
+}
+
+.fieldName{
+  font-weight: bold;
+}
+
+
+.overflow{
+  display:none;
+}
+.hideOverflow::after{
+  content:"...";
+}
+.hideOverflow:hover ~.overflow{
+  display:inherit !important;
+}
+.hideOverflow:hover:after{
+  content:none;
+}

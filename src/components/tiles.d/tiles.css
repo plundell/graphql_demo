@@ -1,0 +1,30 @@
+.tileGrid {
+	display: grid;
+	margin-top:1em;
+	column-gap: 1em;
+  	row-gap: 1em;
+/*	background: green;*/	
+}
+
+.tile{
+	border: 1px solid black;
+/*	background: orange;*/
+}
+
+
+
+.tile:hover{
+	cursor:pointer;
+	filter: brightness(85%);
+}
+.tile .title{
+	text-align: center;
+	font-weight: bold;
+	background: inherit;
+	filter: brightness(85%);
+}
+.tile .content{
+	margin:1em;
+	font-family: monospace;
+}
+

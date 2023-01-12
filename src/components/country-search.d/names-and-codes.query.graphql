@@ -1,0 +1,14 @@
+query NamesAndCodes { 
+    countries { 
+        code
+        name
+    }
+    continents { 
+        code
+        name 
+    }
+    languages { 
+        code
+        name 
+    }
+}

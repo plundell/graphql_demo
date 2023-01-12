@@ -1,0 +1,9 @@
+query CountryDetails($code:ID!) {
+	country(code: $code){
+		native: name
+		capital
+		currency
+		continent{name}
+		languages{name}
+	}
+}

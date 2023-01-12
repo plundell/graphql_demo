@@ -1,0 +1,50 @@
+.CompletionInput{
+    position: relative;
+    margin: auto;
+}
+.CompletionInput>input{
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.completionList{
+    border: 1px solid gray;
+    box-shadow: 0 4px 6px rgb(133 152 209 / 2);
+    max-height: 16em;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    background: white;
+    z-index: 10;
+    opacity: 90%;
+    display: none;
+}
+.CompletionInput>input:focus ~.completionList{
+    display:block !important;
+}
+.completionList .completion{
+    padding: 0 3px;
+}
+
+.completionList .completion.active{
+    background: #b5f0b5;
+}
+.completionList .highlight{
+    color:red;
+}
+.completionList .type{
+    font-style:italic;
+    float:right;
+}
+
+
+.clearInput{
+    position: absolute;
+    right: 0.5em;
+}
+
+.clearInput:hover{
+    cursor: pointer;
+    color:red;
+}
