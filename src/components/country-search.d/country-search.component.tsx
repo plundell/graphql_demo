@@ -102,12 +102,6 @@ export class CountrySearch extends React.Component<Props,State> {
 		)
 	}
 
-
-
-
-
-
-
 	static getCompletionItemHtml(regex:RegExp,ent:Entity,prop:"value"|"code"|'type'):JSX.Element[]|undefined{
 		const match=ent[prop].match(regex);
 		if(match){
