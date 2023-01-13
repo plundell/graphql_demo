@@ -55,37 +55,58 @@ export class CountrySearch extends React.Component<Props,State> {
 						})
 					}
 				})
-				if(list.length)
+				if(list.length){
 					this.entities=list
+					// if(this.props.search)
+					// 	this.getCompletions(this.props.search,list)
+				}else{
+					alert("Something went wrong. Failed to contact the GraphQL API.")
+				}
 			})
+
 	}
 
 	getCompletions(search:string,entities:NullableEntityArray):NullableEntityArray {
-		console.log("getting completions for:",search);
-		if(!entities)
-			entities=this.entities; //if no subset of entities are passed in then use the entire list
-		else if(!entities.length){
 		// console.log("getting completions for:",search);
 		//Ad the search term to the url
 		window.location.hash=`s=${search}`
-			return [];
-		}
-		// console.log("Check for completions to '"+search+"' in:",entities)
-		
-		if(!entities || !entities.length)
-			return null;
 
-		const regex1=new RegExp((search.length<3 ? '(^)(' : '(.*)(')+search+')(.*)','i'); //short strings we only match begining
-		const regex2=new RegExp('^'+search,'i'); //short strings we only match begining
+
+		if(!entities){
+			//if no subset of entities are passed in then use the entire list...
+			if(!this.entities || !this.entities.length){
+				//...but if no list has been retreived yet we return null which won't
+				//show "no results" in the output
+				return null;
+			}
+			entities=this.entities; 
+		}else if(!entities.length){
+			//If an empty subset is passed in that means the last search already didn't 
+			//yield anything in which case it's not gonna help adding more letters so 
+			//we just go ahead and return an empty resultset
+			return []; 
+		}
+		
+		//Define 2 regex, one used for code/value, the other for type. For short strings
+		//and type we only match the begining, else we match anywhere
+		const regex1=new RegExp((search.length<3 ? '(^)(' : '(.*)(')+search+')(.*)','i'); 
+		const regex2=new RegExp('^'+search,'i'); //used for type
+
+		//Define a search function using the regexs^ which also sets the html for
+		//the dropdown list on the returned entity
 		const fn=(e:any,p:any)=>(e.html=CountrySearch.getCompletionItemHtml(p=='type'?regex2:regex1,e,p));
-		var results:NullableEntityArray; /*eslint-disable-line no-var*/
+
+		var completions:NullableEntityArray; /*eslint-disable-line no-var*/
 		if(search.length<3)
-			results=entities.filter(ent=>fn(ent,'value')||fn(ent,'code'));
+			completions=entities.filter(ent=>fn(ent,'value')||fn(ent,'code'));
 		else
-			results=entities.filter(ent=>fn(ent,'value')||fn(ent,'type'));
-		this.setState({results:results.slice(0,settings.maxResults)})
-		 //^we only show the xxx first results
-		return results;
+			completions=entities.filter(ent=>fn(ent,'value')||fn(ent,'type'));
+
+		//While we'll return the entire list of completions vv, we only show a limited
+		//number in the output/results
+		this.setState({results:completions.slice(0,settings.maxResults)})
+		
+		return completions;
 	}
 
 	
