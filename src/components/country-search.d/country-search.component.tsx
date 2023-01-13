@@ -57,8 +57,6 @@ export class CountrySearch extends React.Component<Props,State> {
 				})
 				if(list.length){
 					this.entities=list
-					// if(this.props.search)
-					// 	this.getCompletions(this.props.search,list)
 				}else{
 					alert("Something went wrong. Failed to contact the GraphQL API.")
 				}
