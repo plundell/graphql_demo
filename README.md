@@ -2,6 +2,8 @@
 
 ### See live demo [here](https://plundell.github.io/graphql_demo/build/)
 
+**TODO:** link url to search input
+
 This repo contains a simple [React](https://reactjs.org/docs/create-a-new-react-app.html) web app which demonstrates how to use the [graphql-request](https://github.com/prisma-labs/graphql-request) client library to consume a [GraphQL](https://graphql.org/) API.
 
 It features:
@@ -9,9 +11,7 @@ It features:
  * a grid output of search results
  * grid items are "selectable" and this state remains until app is reset
  * responsive sizing of the grid based on screen size 
- * **TODO:** url is linked to search input
 
- or you can tinker with the code yourself on [StackBlitz](https://stackblitz.com/fork/github/plundell/graphql_demo/?terminal=start)
 
 ## API
 For this demo we're using [this](https://github.com/trevorblades/countries) public API which provides information about countries. 
