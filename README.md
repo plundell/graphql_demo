@@ -9,6 +9,7 @@ It features:
  * a grid output of search results
  * grid items are "selectable" and this state remains until app is reset
  * responsive sizing of the grid based on screen size 
+ * **TODO:** url is linked to search input
 
  or you can tinker with the code yourself on [StackBlitz](https://stackblitz.com/fork/github/plundell/graphql_demo/?terminal=start)
 
