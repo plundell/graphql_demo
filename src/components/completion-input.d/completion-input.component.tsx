@@ -20,6 +20,7 @@ export interface Props<T extends CompletionItem> {
 	onSubmit?:OnSubmitHandler<T>,
 	onEmpty?:()=>void
 	onClear?:()=>void
+	search?:string
 }
 
 interface State<T extends CompletionItem>{
@@ -41,6 +42,16 @@ export class CompletionInput<T extends CompletionItem> extends React.Component<P
 		this.state={completions:null,highlight:-1};
 	}
 	
+	get value(){
+		return this.inputElem?.value
+	}
+	set value(val:string|number){
+		if(this.inputElem){
+			this.inputElem.value=String(val);
+			this.inputElem.dispatchEvent(new Event('input', {bubbles:true,cancelable: true}));
+		}
+	}
+
 	get inputHandler(){
 		if(this.props?.debounce && this.props.debounce>0)
 			return CompletionInput.debounceHandler(this.#inputHandler,this.props.debounce,this);
@@ -188,6 +199,9 @@ export class CompletionInput<T extends CompletionItem> extends React.Component<P
 
 	componentDidMount(): void {
 		this.inputElem.focus();
+		if(this.props.search){
+			this.value=this.props.search
+		}
 	}
 
 }

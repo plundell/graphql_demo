@@ -20,7 +20,9 @@ const settings={
 }
 
 
-export interface Props {} /*eslist-disable-line @typescript-eslint/no-empty-interface*/
+export interface Props {
+	search?:string
+} 
 
 interface State{
 	results:NullableEntityArray
@@ -63,6 +65,9 @@ export class CountrySearch extends React.Component<Props,State> {
 		if(!entities)
 			entities=this.entities; //if no subset of entities are passed in then use the entire list
 		else if(!entities.length){
+		// console.log("getting completions for:",search);
+		//Ad the search term to the url
+		window.location.hash=`s=${search}`
 			return [];
 		}
 		// console.log("Check for completions to '"+search+"' in:",entities)
@@ -91,8 +96,9 @@ export class CountrySearch extends React.Component<Props,State> {
 				<CompletionInput 
 					debounce={settings.debounce} 
 					onInput={this.getCompletions.bind(this)}
-					onEmpty={()=>{this.setState({results:null})}}
+					onEmpty={()=>{this.setState({results:null});window.location.hash=""}}
 					onClear={()=>this.resultsComponent?.clearSelected()}
+					search={this.props.search}
 				/>
 				<CountryResults 
 					results={this.state?.results||null}
