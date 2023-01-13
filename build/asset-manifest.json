@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.29c5867e.css",
-    "main.js": "/static/js/main.d906764a.js",
-    "index.html": "/index.html",
-    "main.29c5867e.css.map": "/static/css/main.29c5867e.css.map",
-    "main.d906764a.js.map": "/static/js/main.d906764a.js.map"
+    "main.css": "/graphql_demo/build/static/css/main.ca23e87a.css",
+    "main.js": "/graphql_demo/build/static/js/main.1053cb77.js",
+    "index.html": "/graphql_demo/build/index.html",
+    "main.ca23e87a.css.map": "/graphql_demo/build/static/css/main.ca23e87a.css.map",
+    "main.1053cb77.js.map": "/graphql_demo/build/static/js/main.1053cb77.js.map"
   },
   "entrypoints": [
-    "static/css/main.29c5867e.css",
-    "static/js/main.d906764a.js"
+    "static/css/main.ca23e87a.css",
+    "static/js/main.1053cb77.js"
   ]
 }

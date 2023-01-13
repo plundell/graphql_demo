@@ -2,6 +2,7 @@
   "name": "graphql_demo",
   "version": "1.0.0",
   "private": false,
+  "homepage":"/graphql_demo/build",
   "scripts": {
     "start": "react-scripts start",
     "start-all": "concurrently \"npm run start\"  \"npm run graphql-watch\"",
