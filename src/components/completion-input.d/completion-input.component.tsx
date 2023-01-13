@@ -31,7 +31,7 @@ interface State<T extends CompletionItem>{
 export class CompletionInput<T extends CompletionItem> extends React.Component<Props<T>,State<T>> {
 
 
-	public value='';
+	public last='';
 
 	//create a fake input element as a placeholder
 	public inputElem:HTMLInputElement=document.createElement('input');
@@ -49,8 +49,8 @@ export class CompletionInput<T extends CompletionItem> extends React.Component<P
 	}
 	#inputHandler(event?:React.FormEvent<HTMLInputElement>){
 		// console.log("updating this.state.completions",this)	
-		const last=this.value;
-		const value=this.value=this.inputElem.value;
+		const last=this.last;
+		const value=this.last=this.inputElem.value;
 		if(!value){
 			this.#setCompletionState(null);
 			if(this.props.onEmpty)
