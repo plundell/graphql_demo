@@ -1,8 +1,9 @@
 query CountryDetails($code:ID!) {
 	country(code: $code){
-		native: name
+		name: native
 		capital
 		currency
+		flag: emoji
 		continent{name}
 		languages{name}
 	}
