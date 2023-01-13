@@ -1,14 +1,14 @@
 # GraphQL Demo
 
-### See demo live [here](https://plundell.github.io/graphql_demo/build/) (using _GitHub pages_)
+### See live demo [here](https://plundell.github.io/graphql_demo/build/)
 
 This repo contains a simple [React](https://reactjs.org/docs/create-a-new-react-app.html) web app which demonstrates how to use the [graphql-request](https://github.com/prisma-labs/graphql-request) client library to consume a [GraphQL](https://graphql.org/) API.
 
 It features:
  * a text search which fetches results as user types
  * a grid output of search results
- * responsive sizing of the grid based on screen size 
  * grid items are "selectable" and this state remains until app is reset
+ * responsive sizing of the grid based on screen size 
 
  or you can tinker with the code yourself on [StackBlitz](https://stackblitz.com/fork/github/plundell/graphql_demo/?terminal=start)
 
@@ -65,12 +65,14 @@ and retuns a single/array of objects. If the `$code` variable above eg. was _"SA
 ```
 
 ### Typed responses
-One major benifit of GraphQL are the customizable queries and predictable responses. To take full advantage of this in combination with TypeScript we're defining queries in standalone files, then using the NPM module [GraphQL CodeGen](https://the-guild.dev/graphql/codegen/plugins/typescript/typed-document-node) to generate _types_ which we can use in our code. The like above contains a video how-to guide, but in short the steps are:
+One major benifit of GraphQL are the customizable queries and predictable responses. To take full advantage of this in combination with TypeScript we're defining queries in standalone files, then using the NPM module [GraphQL CodeGen](https://the-guild.dev/graphql/codegen/plugins/typescript/typed-document-node) to generate _types_ which we can use in our code. The link above contains a video how-to guide, but in short the steps are:
  1. `npm install ...`
- 2. Create config _codegen.ts_ which will
+ 2. Create config _codegen.ts_ which will:
   * Download the schema from uri defined in .env
   * Search for all `'./src/**/*.graphql'` files
   * Output a single `./countries.graphql-types.ts` file
+
+TODO: explain the script which creates methods on the exported graphql object
 
 
 ## Development
