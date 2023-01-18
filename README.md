@@ -2,8 +2,6 @@
 
 ### See live demo [here](https://plundell.github.io/graphql_demo/build/)
 
-**TODO:** link url to search input
-
 This repo contains a simple [React](https://reactjs.org/docs/create-a-new-react-app.html) web app which demonstrates how to use the [graphql-request](https://github.com/prisma-labs/graphql-request) client library to consume a [GraphQL](https://graphql.org/) API.
 
 It features:
